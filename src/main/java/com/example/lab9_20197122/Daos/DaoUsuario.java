@@ -43,9 +43,8 @@ public class DaoUsuario extends DaoBase {
                 pais.setNombre_pais(rs.getString(15));
                 //
                 usuario.setRol(rol);
+                licencia.setPais(pais);
                 usuario.setLicencia(licencia);
-                usuario.setPais(pais);
-
 
                 listaUsuarios.add(usuario);
             }

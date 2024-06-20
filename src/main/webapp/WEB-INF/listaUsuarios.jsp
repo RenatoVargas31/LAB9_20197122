@@ -1,4 +1,5 @@
-<%--
+<%@ page import="com.example.lab9_20197122.Beans.Usuario" %>
+<%@ page import="java.util.ArrayList" %><%--
   Created by IntelliJ IDEA.
   User: rlvs_
   Date: 19/06/2024
@@ -16,23 +17,25 @@
 <table id="example" class="display" style="width:100%">
     <thead>
     <tr>
-        <th>Name</th>
-        <th>Position</th>
-        <th>Office</th>
-        <th>Age</th>
-        <th>Start date</th>
-        <th>Salary</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Tipo de Licencia</th>
+        <th>Pais origen</th>
+
     </tr>
     </thead>
+    <%
+        ArrayList<Usuario> listaUsuario = (ArrayList<Usuario>) request.getAttribute("listaUsuario");
+    %>
     <tbody>
+    <%for (Usuario usuario : listaUsuario) {%>
     <tr>
-        <td>Tiger Nixon</td>
-        <td>System Architect</td>
-        <td>Edinburgh</td>
-        <td>61</td>
-        <td>2011-04-25</td>
-        <td>$320,800</td>
+        <td><%= usuario.getNombres() %></td>
+        <td><%= usuario.getApellidos() %></td>
+        <td><%= usuario.getLicencia().getCategoria() %></td>
+        <td><%= usuario.getLicencia().getPais()%></td>
     </tr>
+    <% } %>
     </tbody>
 </table>
 <script src="https://cdn.datatables.net/2.0.8/js/dataTables.js"></script>

@@ -7,7 +7,7 @@ public class Usuario {
     private String telefono;
     private Rol rol;
     private Licencia licencia;
-    private Pais pais;
+
 
     public String getIdUsuario() {
         return idUsuario;
@@ -57,11 +57,5 @@ public class Usuario {
         this.licencia = licencia;
     }
 
-    public Pais getPais() {
-        return pais;
-    }
 
-    public void setPais(Pais pais) {
-        this.pais = pais;
-    }
 }
